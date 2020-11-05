@@ -1,5 +1,5 @@
-export function createStore(rootReducer) {
-  let state = {};
+export function createStore(rootReducer, initialState) {
+  let state = rootReducer(initialState, { type: "___INIT___" });
   const subscribers = [];
 
   return {
